@@ -1,38 +1,33 @@
+# Tong quan
 
-# Project Struct 
+Du an back end go:
+
++ trien khai theo mo hinh MVC
++ trong tam la service -> La lop ket noi logic nghiep vu va DB
++ Dung GIN lam REST API
+
+# Project Struct
 
 project/
-├── api/                     # API layer: HTTP handler, router, middleware
-│   ├── handler/             # Xử lý request (Controller trong MVC)
-│   ├── middleware/          # Middleware (auth, logging, CORS,…)
-│   └── router.go            # Khởi tạo router, register route
+├── Makefile                 # Script build, run, test, deploy
+├── configs/                 # File cấu hình (yaml, json, env) Dung Viper de khoi tao
+├── docs/                    # Tài liệu dự án, API doc
+├── global/                  # Các config, constants, logger, middleware chung toàn dự án
 │
-├── cmd/                     # Entry points của app
-│   ├── app/                 # Khởi động app (HTTP server, gRPC,…)
-│   │   └── main.go
-│   └── cli/                 # Command line tools (migration, seed,…)
-│       └── main.go
+├── internal/                # Code core/private của dự án
+│   ├── dao/                 # Data access object, truy cập DB
+│   ├── middleware/          # Middleware cho API (auth, logging,…)
+│   ├── model/               # Struct model, entity
+│   ├── routers/             # Route/handler setup, controller
+│   └── service/             # Business logic
 │
-├── config/                  # File cấu hình, env
-│   └── config.yaml/.env
+├── pkg/                     # Package reusable, có thể dùng ngoài module
 │
-├── internal/                # Code private của dự án
-│   ├── model/               # Struct model, ORM, entity
-│   ├── repository/          # Truy cập DB
-│   ├── service/             # Business logic
-│   └── util/                # Hàm tiện ích, helper functions
+├── storage/                 # File storage, local db, cache, upload, static assets
 │
-├── migrations/              # Database migration scripts
-│
-├── pkg/                     # Code public, reusable package (không phụ thuộc internal)
-│
-├── scripts/                 # Scripts build, deploy, install
-│
-├── test/                    # Test riêng biệt, có thể unit hoặc integration
-│
-├── web/                     # Front-end code
+├── scripts/                 # Scripts helper: build, migration, deploy
+├── third_party/             # Thư viện ngoài (non-go mod) hoặc các tool add-on
 │
 ├── go.mod                   # Go module
-├── .gitignore               # Git ignore
+├── .gitignore
 └── LICENSE
-
