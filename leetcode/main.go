@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	arr := problems.MergeSortedArray([]int{1, 2}, []int{3, 4})
+	arr := problems.LongestPalindrome("babad")
 	fmt.Println(arr)
 	fmt.Println("Hello")
 }
