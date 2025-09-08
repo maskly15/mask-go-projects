@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	arr := problems.LongestPalindrome("babad")
+	arr := problems.LengthOfLongestSubstringSlideWindow("dvdf")
 	fmt.Println(arr)
 	fmt.Println("Hello")
 }

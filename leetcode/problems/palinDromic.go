@@ -24,7 +24,6 @@ func LongestPalindrome(s string) string {
 	}
 
 	for diff := 2; diff < n; diff++ {
-
 		for i := 0; i < n-diff; i++ {
 			j := i + diff
 
