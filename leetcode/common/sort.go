@@ -23,3 +23,26 @@ func bubbleSort(nums []int) []int {
 	return nums
 
 }
+
+func quickSort(nums []int) []int {
+	if len(nums) < 1 {
+		return nums
+	}
+	pivot := nums[int(len(nums)/2)]
+	left := []int{}
+	right := []int{}
+	middle := []int{}
+
+	for i := range len(nums) {
+		if nums[i] < pivot {
+			left = append(left, nums[i])
+		} else if nums[i] == pivot {
+			middle = append(middle, pivot)
+		} else {
+			right = append(right, nums[i])
+		}
+	}
+
+	return append(append(quickSort(left), middle...), quickSort(right)...)
+
+}
