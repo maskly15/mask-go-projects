@@ -25,13 +25,13 @@ func FindSubArray(arr, subArr string) int {
 	return -1
 
 }
-
 func numWaterBottles(bottles int, numExchange int) int {
 
 	results := bottles / numExchange
+	extra := bottles % numExchange
 
 	if results > 0 {
-		return bottles + numWaterBottles(results, numExchange)
+		return bottles - extra + numWaterBottles(results+extra, numExchange)
 	}
 
 	return bottles
